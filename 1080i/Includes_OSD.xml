@@ -21,16 +21,16 @@
         <param name="artwork" default="MusicPlayer.Cover" />
         <definition>
           <control type="group">
-                <!-- change 'VideoPlayer.Content(musicvideos)' to '!VideoPlayer.Content(musicvideos)' to hide album poster and progressbar 
-                     modified by dks -->
-                <visible>[Window.IsVisible(VideoFullScreen.xml) + !VideoPlayer.Content(musicvideos)] | !Window.IsVisible(VideoFullScreen.xml)</visible>
+                <!-- Do not apply album poster and small progressbar to music videos, which are actually home videos in my case.
+                <visible>[Window.IsVisible(VideoFullScreen.xml) + VideoPlayer.Content(musicvideos)] | !Window.IsVisible(VideoFullScreen.xml)</visible>
+                modified by dks -->
+                <visible>!Window.IsVisible(VideoFullScreen.xml)</visible>
                 <visible>Window.IsVisible(musicosd) | Player.ShowInfo | [Window.IsVisible(VideoFullScreen.xml) + [!String.IsEmpty(Window(Home).Property(OSDInfo)) | Player.Caching | Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding | Player.ShowInfo | Window.IsActive(videoosd) | Window.IsActive(DialogFullScreenInfo.xml) | Window.IsVisible(DialogPlayerProcessInfo.xml) | [!Skin.HasSetting(DisableMusicVideoAutoInfo) + [Integer.IsEqual(Player.Time(hh),0) + Integer.IsEqual(Player.Time(mm),0) + Integer.IsGreater(Player.Time(ss),5) + Integer.IsLess(Player.Time(ss),15)] | [Integer.IsEqual(Player.TimeRemaining(hh),0) + Integer.IsEqual(Player.TimeRemaining(mm),0) + Integer.IsGreater(Player.TimeRemaining(ss),5) + Integer.IsLess(Player.TimeRemaining(ss),15)]]]]</visible>
                 <animation effect="fade" start="0" end="100" time="300">VisibleChange</animation>
-
                 <control type="image">
                     <animation effect="fade" end="85" condition="true">Conditional</animation>
                     <texture>common/vignette.png</texture>
-                </control>
+                </control> 
                 <control type="group">
                     <visible>Window.IsVisible(musicosd) | Player.ShowInfo | [Window.IsVisible(VideoFullScreen.xml) + [!String.IsEmpty(Window(Home).Property(OSDInfo)) | Player.Caching | Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding | Player.ShowInfo | Window.IsActive(videoosd) | Window.IsActive(DialogFullScreenInfo.xml) | Window.IsVisible(DialogPlayerProcessInfo.xml) | [!Skin.HasSetting(DisableMusicVideoAutoInfo) + [Integer.IsEqual(Player.Time(hh),0) + Integer.IsEqual(Player.Time(mm),0) + Integer.IsGreater(Player.Time(ss),5) + Integer.IsLess(Player.Time(ss),15)] | [Integer.IsEqual(Player.TimeRemaining(hh),0) + Integer.IsEqual(Player.TimeRemaining(mm),0) + Integer.IsGreater(Player.TimeRemaining(ss),5) + Integer.IsLess(Player.TimeRemaining(ss),15)]]]]</visible>
                     <animation effect="fade" start="0" end="100" time="300">VisibleChange</animation>
@@ -105,7 +105,7 @@
 
     <include name="OSD_Video_Seekbar">
       <control type="group">
-            <!-- show progressbar with musicvideo, in my case, home video.  -- modified by dks
+            <!-- show progressbar with musicvideo -- modified by dks
             <visible>!VideoPlayer.Content(musicvideos)</visible> 
             -->
             <visible>!Window.IsVisible(VideoOSDBookmarks.xml)</visible>
