@@ -1,7 +1,6 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version="1.0" encoding="UTF-8"?>
 <window id="2007">
-  <onload condition="System.HasAddon(script.service.slideshow-bgm) + System.AddonIsEnabled(script.service.slideshow-bgm)">RunAddon(script.service.slideshow-bgm)</onload>
-  <!-- <defaultcontrol always="true">9000</defaultcontrol>
+    <!-- <defaultcontrol always="true">9000</defaultcontrol>
     <controls>
         <control type="list" id="9000">
             <orientation>horizontal</orientation>
