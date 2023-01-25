@@ -3,7 +3,7 @@
 
     <expression name="Exp_View_50">[[Container.Content(addons) + [String.IsEmpty(Container.PluginName)]] | [Container.Content(unknown) + [[String.IsEmpty(Container.PluginName)] | [!String.IsEmpty(Container.PluginName)]]] | [Container.Content(playlists) + [[String.IsEmpty(Container.PluginName)] | [!String.IsEmpty(Container.PluginName)]]] | [Container.Content() + !Window.IsVisible(MyPVRTimers.xml) + !Window.IsVisible(MyPVRSearch.xml) + !Window.IsVisible(MyPVRRecordings.xml) + [String.IsEmpty(Container.PluginName)]] | [Container.Content(tags) + [!String.IsEmpty(Container.PluginName)]] | [Container.Content(countries) + [!String.IsEmpty(Container.PluginName)]] | [Container.Content(genres) + !Window.IsVisible(MyMusicNav.xml) + [!String.IsEmpty(Container.PluginName)]] | [Container.Content(genres) + Window.IsVisible(MyMusicNav.xml) + [!String.IsEmpty(Container.PluginName)]] | [Container.Content(studios) + [!String.IsEmpty(Container.PluginName)]] | [Container.Content(years) + !Window.IsVisible(MyMusicNav.xml) + [!String.IsEmpty(Container.PluginName)]] | [Container.Content(years) + Window.IsVisible(MyMusicNav.xml) + [!String.IsEmpty(Container.PluginName)]]]</expression>
     <expression name="Exp_View_50_Include">True</expression>
-    <expression name="Exp_View_51">[[Container.Content(albums) + [[String.IsEmpty(Container.PluginName)] | [!String.IsEmpty(Container.PluginName)]]] | [Container.Content(musicvideos) + [[String.IsEmpty(Container.PluginName)] | [!String.IsEmpty(Container.PluginName)]]] | [Container.Content(images) + [!String.IsEmpty(Container.PluginName)]]]</expression>
+    <expression name="Exp_View_51">[[Container.Content(albums) + [[String.IsEmpty(Container.PluginName)] | [!String.IsEmpty(Container.PluginName)]]] | [Container.Content(images) + [!String.IsEmpty(Container.PluginName)]] | [Container.Content(musicvideos) + [!String.IsEmpty(Container.PluginName)]]]</expression>
     <expression name="Exp_View_51_Include">True</expression>
     <expression name="Exp_View_52">[[Container.Content(actors) + [[String.IsEmpty(Container.PluginName)] | [!String.IsEmpty(Container.PluginName)]]] | [Container.Content(tvshows) + [[String.IsEmpty(Container.PluginName)] | [!String.IsEmpty(Container.PluginName)]]] | [Container.Content(movies) + [!String.IsEmpty(Container.PluginName)]]]</expression>
     <expression name="Exp_View_52_Include">True</expression>
@@ -25,7 +25,7 @@
     <expression name="Exp_View_501_Include">True</expression>
     <expression name="Exp_View_502">[False]</expression>
     <expression name="Exp_View_502_Include">False</expression>
-    <expression name="Exp_View_504">[[Container.Content(movies) + [String.IsEmpty(Container.PluginName)]]]</expression>
+    <expression name="Exp_View_504">[[Container.Content(musicvideos) + [String.IsEmpty(Container.PluginName)]] | [Container.Content(movies) + [String.IsEmpty(Container.PluginName)]]]</expression>
     <expression name="Exp_View_504_Include">True</expression>
     <expression name="Exp_View_56">[False]</expression>
     <expression name="Exp_View_56_Include">False</expression>
